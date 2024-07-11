@@ -13,7 +13,12 @@ const buttonStyles = cva(["transition-colors"], {
             default: ["rounded", "p-2"],
             icon: [
                 "rounded-full"
-                , "w-10", "h-10", "flex", "items-center", "justify-center", "p-2.5"
+                , "w-10"
+                , "h-10"
+                , "flex"
+                , "items-center"
+                , "justify-center"
+                , "p-2.5"
             ]
         }
     },
@@ -27,10 +32,10 @@ const buttonStyles = cva(["transition-colors"], {
 type ButtonProps = VariantProps<typeof buttonStyles> & ComponentProps<"button">
 
 
-// export function Button({ variant, size, className, ...props }: ButtonProps) {
-//     return <button {...props} className={twMerge(buttonStyles({ variant, size }), className)} />
-// }
-
-export function Button({ variant, size, ...props }: ButtonProps) {
-    return <button {...props} className={buttonStyles({ variant, size })} />
+export function Button({ variant, size, className, ...props }: ButtonProps) {
+    return <button {...props} className={twMerge(buttonStyles({ variant, size }), className)} />
 }
+
+// export function Button({ variant, size, ...props }: ButtonProps) {
+//     return <button {...props} className={buttonStyles({ variant, size })} />
+// }
