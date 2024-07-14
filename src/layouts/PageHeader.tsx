@@ -1,4 +1,4 @@
-import { Bell, Menu, Mic, Search, Upload, User } from 'lucide-react'
+import { ArrowLeft, Bell, Menu, Mic, Search, Upload, User } from 'lucide-react'
 import logo from '../assets/Logo.png'
 import { Button } from '../components/Button'
 import { useState } from 'react';
@@ -9,7 +9,7 @@ export function PageHeader() {
 
     return (
         <div className="flex gap-10 lg:gap-20 justify-between pt-2 mb-6 mx-4">
-            <div className="flex gap-4 items-center flex-shrink-0">
+            <div className={`gap-4 items-center flex-shrink-0 ${showFullWidthSearch ? 'hidden' : 'flex' } `}>
                 <Button variant={'ghost'} >
                     <Menu />
                 </Button>
@@ -17,7 +17,11 @@ export function PageHeader() {
                     <img src={logo} alt="logo" className='h-6' />
                 </a>
             </div>
-            <form className="md:flex hidden flex-grow gap-4  justify-center ">
+            <form className={` flex-grow gap-4  justify-center ${showFullWidthSearch ? 'flex' : 'hidden md:flex' }`}>
+                { showFullWidthSearch && <Button type="button" size="icon" variant={`ghost`} 
+                        onClick={ ( )=>{ setShowFullWidthSearch(false) }} >
+                    <ArrowLeft />
+                </Button>}
                 <div className="flex flex-grow  max-w-[600px]">
                     <input type="search" placeholder='serach'
                         className='rounded-l-full border 
