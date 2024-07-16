@@ -54,9 +54,10 @@ export function VideoGridItem(videoGridItem: VideoGridItem) {
                         object-cover 
                         absolute inset-0 
                         transition-opacity duration-1000 
-                        ${isVideoPlaying ? "opacity-100 delay-200" : "opacity-0"
+                        ${isVideoPlaying ? "opacity-100 delay-100" : "opacity-0"
                         }`}
                     ref={videoRef}
+                    muted
                     playsInline
                     src={videoGridItem.videoUrl}
                 />
